@@ -1,4 +1,4 @@
-# TFT-Duino-coin-wallet-monitor-esp32-2432s028r-CYD-Real-time-clock-alarm.
+# TFT-Duino-coin-wallet-monitor-esp32-2432s028r-CYD-Real-time-clock-alarm
 ![Imagine WhatsApp 2025-11-02 la 13 00 24_d663f3b1](https://github.com/user-attachments/assets/f83b96ce-1bcf-429f-a82c-a170e8d6e3bb)
 ![Imagine WhatsApp 2025-11-02 la 12 58 09_1f3f1c5d](https://github.com/user-attachments/assets/ed943ca2-d09a-44f9-9753-18dcf4a0cba0)
 ![IMG-20251102-WA0012](https://github.com/user-attachments/assets/112aaa05-0616-4db5-bac1-43e2fdb42176)
