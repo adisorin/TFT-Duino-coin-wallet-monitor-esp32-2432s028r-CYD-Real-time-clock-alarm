@@ -1216,8 +1216,8 @@ animatieLogoDuino();
   alarmEnabled = (storedEn != 0);
   // Adaugă mai multe rețele WiFi (preset)
   wifiMulti.addAP("", ""); // prima rețea (placeholder)
-  wifiMulti.addAP("*********", "*********"); // preset cange*****
-  wifiMulti.addAP("*********", "**********"); // preset cange*****
+  wifiMulti.addAP("ssid*********", "Password*********"); // preset cange-ssid***** , ****Password
+  wifiMulti.addAP("ssis*********", "Password**********"); // preset cange-ssid***** , ****Password
   if(wifiMulti.run()==WL_CONNECTED){
     Serial.println("\nConectat la WiFi!");
     // update time & UI
