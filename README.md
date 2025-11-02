@@ -22,7 +22,6 @@ Un cod complet și destul de complex pentru ESP32, care combină multe component
 Hai să-ți explic pe scurt ce face acest cod și cum e structurat, pas cu pas 👇
 
 🧩 1. Biblioteci incluse
-
 Codul include multe librării:
 WiFi.h, HTTPClient.h – pentru conectarea și comunicarea prin internet;
 ArduinoJson.h – pentru a interpreta datele JSON primite de la serverul Duino-Coin;
@@ -34,7 +33,6 @@ driver/ledc.h – pentru PWM hardware (folosit la reglarea luminozității ecran
 Arduino.h – biblioteca de bază a mediului Arduino/ESP32.
 
 📶 2. Conectarea WiFi și Duino-Coin
-
 Se definește utilizatorul Duino-Coin (ducoUser).
 WiFiMulti permite conectarea la mai multe rețele dacă sunt memorate.
 Codul folosește API-urile Duino-Coin:
@@ -42,32 +40,27 @@ Codul folosește API-urile Duino-Coin:
 /users/{user} – pentru informații despre mineri.
 
 🌞 3. Controlul luminozității și LDR
-
 LDR-ul pe pinul 34 măsoară lumina ambientală.
 PWM-ul de pe pinul 21 controlează luminozitatea ecranului în funcție de lumină.
 Se face o “netezire” a valorilor (smoothBrightness) pentru a evita variațiile bruște.
 
 🔊 4. Volum, alarmă și DAC audio
-
 Se stochează volumul în EEPROM (ADDR_ALARM_VOL).
 Buzzerul este pe pinul DAC (26) — se generează un sunet analogic (dacWrite).
 Funcția beepDAC(freq, duration) produce un ton cu frecvența dorită și durata specificată.
 Exista controale grafice pentru volum (“V+” și “V−”).
 
 🕒 5. Ceasul și sincronizarea NTP
-
 Se conectează la pool.ntp.org pentru ora exactă.
 Se afișează ora locală mare pe ecran, în format HH:MM:SS.
 Timpul e menținut precis folosind diferența de millis() de la ultima sincronizare.
 
 ⏰ 6. Alarma
-
 Setări: oră, minut, volum, activare/dezactivare;
 Se salvează în EEPROM;
 La ora setată, funcția checkAlarm() pornește alarma (startAlarm()), care afișează “ALARM!” pe ecran și redă un ton prin DAC.
 
 📱 7. Ecranul tactil (Touch)
-
 Se calibrează la prima utilizare (valorile minX/maxX etc.);
 Coordonatele sunt mapate la ecranul de 320x240 pixeli;
 Se definesc butoane tactile:
@@ -79,32 +72,29 @@ Butoane volum.
 Beep la atingerea tastelor, butoanelor si display.
 
 🧮 8. Pagini interfață:
-
 Pagina 1: Ceas, alarmă, volum;
 Pagina 2: Minerii activi Duino-Coin (API call);
 Pagina 3: Lista rețelelor WiFi disponibile + conectare cu tastatură virtuală.
 
 🔤 9. Tastatura virtuală
-
 Este complet grafică, desenată pe TFT;
 Are litere, cifre, simboluri, spațiu, caps lock, OK și EXIT;
 Returnează parola introdusă pentru conexiunea WiFi;
 Caps lock și tastele au efect vizual (feedback tactil).
-💾 10. EEPROM
 
+💾 10. EEPROM
 Stochează permanent:
 calibrarea ecranului tactil (min/max X/Y);
 volumul alarmei;
 ora/minutul alarmei;
 starea activă (ON/OFF) a alarmei.
-🎨 11. Animația de pornire “Duino-Coin”
 
+🎨 11. Animația de pornire “Duino-Coin”
 Efect “fade-in” și “fade-out” al backlight-ului;
 Cercuri concentrice și text animat “DUINO-COIN”;
 Text “By Sor Adi”.
 
 🌐 12. Interacțiuni cu utilizatorul (verificaTouch)
-
 Funcția verificaTouch() gestionează TOT ce atingi pe ecran:
 oprește alarma dacă sună;
 schimbă paginile;
@@ -113,12 +103,10 @@ deschide tastatura pentru setarea alarmei;
 deschide lista WiFi și permite conectarea.
 
 🔔 13. Melodie “Super Mario” (începutul)
-
 La finalul codului (trunchiat în mesajul tău), este pregătită o listă de frecvențe NOTE_C1, NOTE_D1, etc.
 Probabil urmează o funcție playMario() care redă melodia “Super Mario Theme” prin buzzerul DAC.
 
 🧠 Rezumat scurt:
-
 Acesta este un proiect complex de ceas inteligent cu ecran tactil și conectivitate, pentru ESP32, care:
 afișează ora reală sincronizată NTP;
 redă o alarmă configurabilă;
